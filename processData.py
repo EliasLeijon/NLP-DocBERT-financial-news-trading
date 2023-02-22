@@ -4,8 +4,10 @@
 import re
 
 # Using readlines()
-file1 = open('rawData/uniqHighPosNews.csv', 'r')
+file1 = open('rawData/uniqMediumPosNews.csv', 'r')
 Lines = file1.readlines()
+
+f = open("processed_data.txt", "a")
 
 count = 0
 # Strips the newline character
@@ -33,5 +35,7 @@ for line in Lines:
     result = re.sub(' p ', '. ', result)
 
     # utf-8 encoding verkar inte fungera som väntat, åäö är fuckat
+    f.write(result + "\n")
 
     print("Line{}: {}".format(count, result))
+f.close()
