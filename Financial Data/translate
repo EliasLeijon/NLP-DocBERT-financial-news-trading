@@ -1,0 +1,35 @@
+import pandas as pd
+import pyarrow.parquet as pq
+from googletrans import Translator
+
+# Load the parquet file into a Pandas dataframe
+df = pd.read_parquet('Financial Data/train-00000-of-00001.parquet')
+print(df)
+# Select the column with the sentences to translate]
+
+sentences = df['text']
+tags = df['labels']
+
+# Initialize the translator
+translator = Translator(service_urls=['translate.google.com'])
+
+# Define a function to translate each sentence
+def translate_text(text):
+    try:
+        translation = translator.translate(text, src='en', dest='sv')
+        return translation.text
+    except:
+        return "Translation Error"
+
+# Apply the translation function to the sentences
+translated_sentences = sentences.apply(translate_text)
+
+# Add the translated sentences and tags to a new dataframe
+translated_df = pd.DataFrame({
+    'sentence_column_name': translated_sentences,
+    'tag_column_name': tags
+})
+
+print("hej")
+# Save the translated dataframe to a new parquet file
+pq.write_table(pq.Table.from_pandas(translated_df), 'translated_train-00000-of-00001.parquet')
