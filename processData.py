@@ -4,7 +4,7 @@
 import re
 
 # Using readlines()
-file1 = open('rawData/uniqMediumPosNews.csv', 'r')
+file1 = open('rawData/uniqNeutralNews.csv', 'r')
 Lines = file1.readlines()
 
 f = open("processed_data.txt", "a")
