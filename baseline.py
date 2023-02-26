@@ -64,11 +64,11 @@ financial_news_train_dataset = SNLIDataset('./Financial Data/financial_phrases_l
 financial_news_test_dataset = SNLIDataset('./Financial Data/financial_phrases_labeled_psv_test.csv')
 amazon_review_dataset = SNLIDataset('./amazon-review-data/amazon_review_data_psv.csv', max_size = 400)
 # data = financial_news_train_dataset[121]
-print(financial_news_train_dataset.xs[0])
-print(financial_news_test_dataset.xs[0])
-print(max(amazon_review_dataset.sentence_lengths))
-print(max(financial_news_train_dataset.sentence_lengths))
-print(min(financial_news_train_dataset.sentence_lengths))
+print("financial news dataset example", financial_news_train_dataset.xs[0])
+# print(financial_news_test_dataset.xs[0])
+print("max length amazon review: ", max(amazon_review_dataset.sentence_lengths))
+print("max length finanzial paragraph: ", max(financial_news_train_dataset.sentence_lengths))
+print("min length finanzial paragraph: ",min(financial_news_train_dataset.sentence_lengths))
 
 """## Import swedish bert"""
 
@@ -78,9 +78,11 @@ from transformers import BertTokenizer, BertForSequenceClassification
 tokenizer = BertTokenizer.from_pretrained('KB/bert-base-swedish-cased', do_lower_case=True)
 
 tokenized = tokenizer(text=financial_news_train_dataset[1][0], padding='longest', return_tensors='pt')
+print("================ CHECK THAT TOKENIZATION WORKS ============")
 print(financial_news_train_dataset[1][0])
 print(tokenized.input_ids)
 print(tokenized)
+print("===========================================================")
 
 """### Define colate function that tokenizes"""
 
@@ -153,9 +155,9 @@ def evaluate_model(model, valid_data, batch_size):
 
 """## Train and save the financial model"""
 
-financial_trained_model = train_model(financial_news_train_dataset, 64)
-evaluate_model(financial_trained_model, financial_news_test_dataset)
-financial_trained_model.save_pretrained("./financial_trained_model")
+# financial_trained_model = train_model(financial_news_train_dataset, 64)
+# evaluate_model(financial_trained_model, financial_news_test_dataset)
+# financial_trained_model.save_pretrained("./financial_trained_model")
 
 """## Load the financial model and evaluate it on similar test-data 
 accuracy should be 88%+
