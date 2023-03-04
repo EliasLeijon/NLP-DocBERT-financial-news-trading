@@ -1,3 +1,23 @@
+# TDDE09 Project status report week 2
+## What has been done
+This week we sucessfully implemented a docbert which is able to process larger documents in an efficient manner. Our own collected news were nicely processed, and we got started on our presentation and abstract for the report.
+
+## What will be done the comming week
+This week we will have a lot to do. 
+
+ - [ ] Firtly, we should experiment with how a difference in text-length in the training dataset compared to the testing dataset can affect prediction quality. I propose that we do this by finding a labeled dataset with a lot of variance in length, and split this dataset into 3 sets, one with the longer documents, one with middle long document and one with the shortest documents. Then we should train a model on the middle and short datasets and evaluate these on the long dataset. Note. The short and the middle dataset should have an equal amount of entries.
+
+- [ ] Secondly, we should process the rest of our data similarly to how the own-collected news were processed.
+
+- [ ] We should also thoroughly examine our litterature, mainly the [text-splitting with overlap article](https://arxiv.org/pdf/1904.08398.pdf) and the [original docbert article](https://arxiv.org/pdf/1910.10781.pdf), to see if anything is missing in our BERT arcitechture.
+
+- [ ] Furthermore, we should train a BERT on our training datasets and evaluate it on the test dataset. 
+
+## Current problems
+Besides a lot of work in front of us, we do not have any current problems.
+
+
+
 # TDDE09 Project status report week 1
 ## What has been done
 Starting with what we are supposed to have done. 
