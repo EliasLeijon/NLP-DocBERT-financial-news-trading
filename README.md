@@ -7,7 +7,7 @@ This week we will have a lot to do.
 
  - [ ] Firtly, we should experiment with how a difference in text-length in the training dataset compared to the testing dataset can affect prediction quality. I propose that we do this by finding a labeled dataset with a lot of variance in length, and split this dataset into 3 sets, one with the longer documents, one with middle long document and one with the shortest documents. Then we should train a model on the middle and short datasets and evaluate these on the long dataset. Note. The short and the middle dataset should have an equal amount of entries.
 
-- [ ] Secondly, we should process the rest of our data similarly to how the own-collected news were processed.
+- [x] Secondly, we should process the rest of our data similarly to how the own-collected news were processed.
 
 - [ ] We should also thoroughly examine our litterature, mainly the [text-splitting with overlap article](https://arxiv.org/pdf/1904.08398.pdf) and the [original docbert article](https://arxiv.org/pdf/1910.10781.pdf), to see if anything is missing in our BERT arcitechture.
 
