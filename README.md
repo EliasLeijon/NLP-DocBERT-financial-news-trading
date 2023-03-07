@@ -9,9 +9,9 @@ This week we will have a lot to do.
 
 - [x] Secondly, we should process the rest of our data similarly to how the own-collected news were processed.
 
-- [ ] We should also thoroughly examine our litterature, mainly the [text-splitting with overlap article](https://arxiv.org/pdf/1904.08398.pdf) and the [original docbert article](https://arxiv.org/pdf/1910.10781.pdf), to see if anything is missing in our BERT arcitechture.
+- [x] We should also thoroughly examine our litterature, mainly the [text-splitting with overlap article](https://arxiv.org/pdf/1904.08398.pdf) and the [original docbert article](https://arxiv.org/pdf/1910.10781.pdf), to see if anything is missing in our BERT arcitechture.
 
-- [ ] Furthermore, we should train a BERT on our training datasets and evaluate it on the test dataset. 
+- [x] Furthermore, we should train a BERT on our training datasets and evaluate it on the test dataset. 
 
 ## Current problems
 Besides a lot of work in front of us, we do not have any current problems.
