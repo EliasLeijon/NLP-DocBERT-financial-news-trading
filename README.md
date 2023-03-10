@@ -5,7 +5,9 @@ This week we sucessfully implemented a docbert which is able to process larger d
 ## What will be done the comming week
 This week we will have a lot to do. 
 
- - [ ] Firtly, we should experiment with how a difference in text-length in the training dataset compared to the testing dataset can affect prediction quality. I propose that we do this by finding a labeled dataset with a lot of variance in length, and split this dataset into 3 sets, one with the longer documents, one with middle long document and one with the shortest documents. Then we should train a model on the middle and short datasets and evaluate these on the long dataset. Note. The short and the middle dataset should have an equal amount of entries.
+ - [x] Firtly, we should experiment with how a difference in text-length in the training dataset compared to the testing dataset can affect prediction quality. I propose that we do this by finding a labeled dataset with a lot of variance in length, and split this dataset into 3 sets, one with the longer documents, one with middle long document and one with the shortest documents. Then we should train a model on the middle and short datasets and evaluate these on the long dataset. Note. The short and the middle dataset should have an equal amount of entries.
+
+ Instead of short, medium long and long, we have dataset with the same document length as our training dataset and test dataset. No significant difference was seen.
 
 - [x] Secondly, we should process the rest of our data similarly to how the own-collected news were processed.
 
