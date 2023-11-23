@@ -1,12 +1,20 @@
 # DocBERT for financial news classification
 ## Project description
-In this three week long project we investigated domain transfer between sentiment analysis for reviews to sentiment analysis for stock-related news, compared to sentiment analysis for financial phrases to sentiment analysis for financial news. In order to be able to process and classify large documents such as news articles, we implemented a so called DocBERT based on [this](https://arxiv.org/pdf/1910.10781.pdf) article. The main principle is to segment the document into chunks with overlap, which leads to a time complexity of $O(n)$ instead of $O(n^2)$, which a transformer usually has due to the attention mechanism. 
+In this three week long project we investigated domain transfer between sentiment analysis for reviews to sentiment analysis for stock-related news, compared to sentiment analysis for financial phrases (found labeled on huggingface) to sentiment analysis for financial news. In order to be able to process and classify large documents such as news articles, we implemented a so called DocBERT based on [this](https://arxiv.org/pdf/1910.10781.pdf) article. The main principle is to segment the document into chunks with overlap, which leads to a time complexity of $O(n)$ instead of $O(n^2)$, which a transformer usually has due to the attention mechanism. 
 
 The news articles that we tested on where gathered, and marked as positive/neutral/negative based on the stock price movement within 5 minutes after the news article was published. The tresholds for a positive/negative news article was a movement of + or - 3% respectively.
 
 ## Further modifications
 When DocBERT was implemented, it was still a bit slow due to the varying lengths of the documents, since all entries in a batch need to be padded to the same length. One way to mitigate this a bit, which we implemented is to sort the entries by length to minimize the unneccesary padding, and thus the length of our batches. You can see this visualized in an image we drew in ms-paint one late evening. This image also shows how the splitting was made, in order to ensure that an equal amount of splits were made each batch. ![gameplan](Gameplan.png)
 
+# Results.
+Unsurprisingly, the sentiment of financial phrases ended up having better domain transfer to financial news compared to amazon reviews. The final results on the gathered testing data can be seen in the following confusion matrixes.
+
+**The performance of the model trained on amazon reviews**
+![amazon-review-conf-matrix](amazon_review_conf_matrix.png)
+
+**The performance of the model trained on financial phrases**
+![financial-phrases-conf-matrix](financial_phrases_conf_matrix.png)
 
 # Status reports
 During the project we made weekly status reports for the examiner, these can be found here. 
