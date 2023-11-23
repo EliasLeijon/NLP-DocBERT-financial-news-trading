@@ -11,9 +11,11 @@ When DocBERT was implemented, it was still a bit slow due to the varying lengths
 Unsurprisingly, the sentiment of financial phrases ended up having better domain transfer to financial news compared to amazon reviews. The final results on the gathered testing data can be seen in the following confusion matrixes.
 
 **The performance of the model trained on amazon reviews**
+
 ![amazon-review-conf-matrix](amazon_review_conf_matrix.png)
 
 **The performance of the model trained on financial phrases**
+
 ![financial-phrases-conf-matrix](financial_phrases_conf_matrix.png)
 
 # Status reports
